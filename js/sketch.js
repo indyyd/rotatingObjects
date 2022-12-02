@@ -1,11 +1,21 @@
+var a = 0;
+
 function setup() {
-    var canvas = createCanvas(800, 800);
-    canvas.parent("p5container");
+    createCanvas(800, 800);
+    background(220)
+    angleMode(DEGREES);
 }
 
-function draw() {
-    background(220);
 
-    fill(255, 255, 255);
-    ellipse(400, 400, 200);
+
+function draw () {
+    push();
+    //translate to where you want the centre of the elipse to be
+    translate(width/2, height /2);
+    rotate(a);
+    //draw the elipse at the origin
+    ellipse(0, 0, 350, 150);
+    a = a+0.5;
+
+    pop()
 }
